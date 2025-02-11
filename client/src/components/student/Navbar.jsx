@@ -35,7 +35,7 @@ const Navbar = () => {
              {
                user
                 ? <UserButton/>
-                :  <button><img src={assets.user_icon} alt="" /></button>   
+                :  <button onClick={()=> openSignIn()}><img src={assets.user_icon} alt="" /></button>   
              }
              
         </div>
