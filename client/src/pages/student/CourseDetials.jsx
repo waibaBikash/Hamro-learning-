@@ -28,7 +28,8 @@ const CourseDetials = () => {
       {/* Left Column */}
       <div>
          <h1>{courseData.courseTitle}</h1>
-         <p dangerouslySetInnerHTML={{_html: courseData.courseDescription.slice(0,200)}}></p>
+         {/*  use double undescore */}
+         <p dangerouslySetInnerHTML={{__html: courseData.courseDescription.slice(0,200)}}></p>
       </div>
 
       {/* Right Column */}
