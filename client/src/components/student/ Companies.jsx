@@ -1,5 +1,5 @@
-import React from 'react'
-import { assets } from '../../assets/assets'
+import React from 'react';
+import { assets } from '../../assets/assets';
 
 const  Companies = () => {
   return (
@@ -16,4 +16,4 @@ const  Companies = () => {
   )
 }
 
-export default  Companies
+export default  Companies;
