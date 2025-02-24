@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'
 import { AppContext } from '../../context/AppContext'
 import Loading from '../../components/student/Loading'
@@ -91,4 +91,4 @@ const CourseDetials = () => {
   ) : <Loading/>
 }
 
-export default CourseDetials
+export default CourseDetials;
