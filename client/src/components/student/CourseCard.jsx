@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../../context/AppContext'
 import { assets } from '../../assets/assets'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 
 const CourseCard = ({course}) => {
@@ -28,4 +28,4 @@ const CourseCard = ({course}) => {
   )
 }
 
-export default CourseCard
+export default CourseCard;
