@@ -16,8 +16,8 @@ const CoursesList = () => {
    if(allCourses && allCourses.length > 0){
     const tempCourses = allCourses.slice()
 
-    input 
-    ? setFilteredCourse(
+    input ? 
+    setFilteredCourse(
       tempCourses.filter(
         item => item.courseTitle.toLowerCase().includes(input.toLowerCase())
       )

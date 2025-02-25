@@ -15,7 +15,7 @@ const CourseDetials = () => {
 
   const fetchCourseData = async ()=>{
    const findCourse =  allCourses.find(course => course._id === id)
-   setCourseData(findCourse)
+   setCourseData(findCourse);
   }
 
   useEffect(()=>{
