@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { AppContext } from '../../context/AppContext'
 import Loading from '../../components/student/Loading'
 import { assets } from '../../assets/assets'
+import humanizeDuration from 'humanize-duration';
 
 
 const CourseDetials = () => {
@@ -13,7 +14,7 @@ const CourseDetials = () => {
   const [openSections, setOpenSections]
 = useState({}) 
 
-  const {allCourses, calculateRating,claculateNoOfLectures, calculateCourseDuration, calculateChapterTime, humanizeDuration} = useContext(AppContext)
+  const {allCourses, calculateRating,claculateNoOfLectures, calculateCourseDuration, calculateChapterTime,currency} = useContext(AppContext)
 
   const fetchCourseData = async ()=>{
    const findCourse =  allCourses.find(course => course._id === id)
@@ -81,7 +82,7 @@ const CourseDetials = () => {
                                                <p>{lecture.lectureTitle}</p>
                                                 <div className='flex gap-2'>
                                                    {lecture.isPreviewFree && <p className='text-blue-500 cursor-pointer'>Preview</p>}
-                                                   {/* <p>{humanizeDuration(lecture.lectureDuration * 60 * 1000, {units: ["h", "m"]})}</p> */}
+                                                   <p>{humanizeDuration(lecture.lectureDuration * 60 * 1000, {units: ["h", "m"]})}</p>
                                                 </div>
                                             </div>
                                         </li>
@@ -100,7 +101,36 @@ const CourseDetials = () => {
       </div>
 
       {/* Right Column */}
-      <div></div>
+      <div className='max-w-course-card z-10 shadow-custom-card rounded-t md:rounded-none overflow-hidden bg-white min-w-[300px] sm:min-w-[420px]'>
+         <img src={courseData.courseThumbnail} alt="" />
+          <div className='p-5'>
+             <div className='flex items-center gap-2'>
+               <img src={assets.time_left_clock_icon} alt="temt left clock icon" />
+               <p className='text-red-500'> <span className='font-medium'>5 days</span> left at this price!</p>
+             </div>
+              <div className='flex gap-3 items-center pt-2'>
+                <p className='text-gray-800 md:text-4xl text-2xl font-semibold'>{currency}{(courseData.coursePrice - courseData.discount * courseData.coursePrice / 100).toFixed(2) }</p>
+                <p className='md:text-lg text-gray-500 line-through'>{currency}{courseData.coursePrice}</p>
+                <p className='md:text-lg text-gray-500'>{courseData.discount}% off</p>
+              </div>
+               <div className='flex items-center text-sm md:text-default gap-4 pt-2 md:pt-4 text-gray-500'>
+                 <div className='flex items-center gap-1'>
+                   <img src={assets.star} alt="star icon" />
+                   <p>{calculateRating(courseData)}</p>
+                 </div>
+                    <div className='h-4 w-px bg-gray-500/40'></div>
+                       <div className='flex items-center gap-1'>
+                         <img src={assets.time_clock_icon} alt="clock icon" />
+                         <p>{calculateCourseDuration(courseData)}</p>
+                       </div>
+                       <div className='h-4 w-px bg-gray-500/40'></div>
+                       <div className='flex items-center gap-1'>
+                         <img src={assets.lesson_icon} alt="clock icon" />
+                         <p>{claculateNoOfLectures(courseData)} lessions</p>
+                       </div>
+               </div>
+          </div>
+      </div>
 
     </div>
     </>
