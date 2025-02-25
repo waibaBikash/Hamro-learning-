@@ -42,7 +42,7 @@ const CourseDetials = () => {
                          {[...Array(5)].map((_,i)=>(<img className='w-3.5 h-3.5' key={i} src={i < Math.floor(calculateRating(courseData)) ? assets.star : assets.star_blank} alt=''/>
                        ))}
                        </div>
-                       <p className='text-gray-500'>({courseData.courseRatings.length}
+                       <p className='text-blue-600'>({courseData.courseRatings.length}
                         {courseData.courseRatings.length > 1 ? 'ratings' : 'rating'})</p>
 
                         <p>{courseData.enrolledStudents.length}{courseData.enrolledStudents.length > 1 ? 'students' : 'student'}</p>
