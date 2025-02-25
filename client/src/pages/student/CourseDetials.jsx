@@ -3,13 +3,15 @@ import { useParams } from 'react-router-dom'
 import { AppContext } from '../../context/AppContext'
 import Loading from '../../components/student/Loading'
 import { assets } from '../../assets/assets'
-import humanizeDuration from 'humanize-duration'
+
 
 const CourseDetials = () => {
 
   const {id} = useParams()
 
   const [courseData, setCourseData] = useState(null)
+  const [openSections, setOpenSections]
+= useState({}) 
 
   const {allCourses, calculateRating,claculateNoOfLectures, calculateCourseDuration, calculateChapterTime, humanizeDuration} = useContext(AppContext)
 
@@ -21,6 +23,14 @@ const CourseDetials = () => {
   useEffect(()=>{
    fetchCourseData()
   },[])
+
+  const toggleSection = (index)=>{
+    setOpenSections((prev)=>(
+      {...prev,
+        [index]: !prev[index],
+      }
+    ));
+  };
   return courseData ? (
     <>
     <div className='flex md:flex-row flex-col-reverse gap-10 relative items-start justify-between md:px-36 px-8 md:pt-30 pt-20 text-left'>
@@ -53,24 +63,24 @@ const CourseDetials = () => {
                       <h2 className='text-xl font-semibold'>Course Sturcture</h2>
                         <div className='pt-5'>
                             {courseData.courseContent.map((chapter, index)=> (
-                               <div key={index}>
-                                  <div>
-                                      <div>
+                               <div key={index} className='border border-gray-300 bg-white mb-2 rounded'>
+                                  <div className='flex items-center justify-between px-4 py-3 cursor-pointer select-none' onClick={()=> toggleSection(index)}>
+                                      <div className='flex items-center gap-2'>
                                         <img src={assets.down_arrow_icon} alt="arrow icon" />
-                                        <p>{chapter.chapterTitle}</p>
+                                        <p className='font-medium md:text-base text-sm'>{chapter.chapterTitle}</p>
                                       </div>
-                                       <p>{chapter.chapterContent.length}lectures - {calculateChapterTime(chapter)}</p>
+                                       <p className='text-sm md:text-default'>{chapter.chapterContent.length}lectures - {calculateChapterTime(chapter)}</p>
                                   </div>
-                                   <div>
-                                     <ul>
+                                   <div className={`overflow-hidden transition-all duration-300 ${openSections[index] ? 'max-h-96' : 'max-h-0'}`}>
+                                     <ul className='list-disc md:pl-10 pl-4 pr-4 py-2 text-gray-600 border-t border-gray-300'>
                                        {chapter.chapterContent.map((lecture, i)=>(
-                                        <li key={i}>
+                                        <li className='flex items-start gap-2 py-1' key={i}>
                                            <img className='w-4 h-4 mt-1' src={assets.play_icon} alt="play icon" />
-                                            <div>
+                                            <div className='flex items-center justify-between w-full text-gray-800 text-xs md:text-default'>
                                                <p>{lecture.lectureTitle}</p>
-                                                <div>
-                                                   {lecture.isPreviewFree && <p>Preview</p>}
-                                                   <p>{humanizeDuration(lecture.lectureDuration * 60 * 1000, {units: ['h', 'm']})}</p>
+                                                <div className='flex gap-2'>
+                                                   {lecture.isPreviewFree && <p className='text-blue-500 cursor-pointer'>Preview</p>}
+                                                   {/* <p>{humanizeDuration(lecture.lectureDuration * 60 * 1000, {units: ["h", "m"]})}</p> */}
                                                 </div>
                                             </div>
                                         </li>
