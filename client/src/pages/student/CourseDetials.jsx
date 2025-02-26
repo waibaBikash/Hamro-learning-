@@ -11,8 +11,7 @@ const CourseDetials = () => {
   const {id} = useParams()
 
   const [courseData, setCourseData] = useState(null)
-  const [openSections, setOpenSections]
-= useState({}) 
+  const [openSections, setOpenSections]= useState({}) 
 
   const {allCourses, 
     calculateRating,
