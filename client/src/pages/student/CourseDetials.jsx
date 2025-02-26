@@ -12,6 +12,7 @@ const CourseDetials = () => {
 
   const [courseData, setCourseData] = useState(null)
   const [openSections, setOpenSections]= useState({}) 
+  const [isAlreadyEnrolled, setIsAlreadyEnrolled] = useState(false)
 
   const {allCourses, 
     calculateRating,
@@ -132,6 +133,7 @@ const CourseDetials = () => {
                          <p>{claculateNoOfLectures(courseData)} lessions</p>
                        </div>
                </div>
+                <button className='md:mt-6 w-full py-3 rounded bg-blue-600 text-white font-medium'>{isAlreadyEnrolled ? 'Already Enrolled' : 'Enroll Now'}</button>
           </div>
       </div>
 
