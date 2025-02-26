@@ -30,7 +30,7 @@ const CourseDetials = () => {
 
   useEffect(()=>{
    fetchCourseData()
-  },[])
+  },[allCourses])
 
   const toggleSection = (index)=>{
     setOpenSections((prev)=>(
