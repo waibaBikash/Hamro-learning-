@@ -14,7 +14,11 @@ const CourseDetials = () => {
   const [openSections, setOpenSections]
 = useState({}) 
 
-  const {allCourses, calculateRating,claculateNoOfLectures, calculateCourseDuration, calculateChapterTime,currency} = useContext(AppContext)
+  const {allCourses, 
+    calculateRating,
+    claculateNoOfLectures,
+     calculateCourseDuration,
+     calculateChapterTime,currency} = useContext(AppContext)
 
   const fetchCourseData = async ()=>{
    const findCourse =  allCourses.find(course => course._id === id)
