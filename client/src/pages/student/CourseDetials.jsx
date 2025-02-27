@@ -72,7 +72,12 @@ const CourseDetials = () => {
                        <p className='text-blue-600'>({courseData.courseRatings.length}
                         {courseData.courseRatings.length > 1 ? 'ratings' : 'rating'})</p>
 
-                        <p>{courseData.enrolledStudents.length}{courseData.enrolledStudents.length > 1 ? 'students' : 'student'}</p>
+                        <p>
+                          {courseData.enrolledStudents.length}
+                          {courseData.enrolledStudents.length > 1
+                           ? 'students'
+                           : 'student'}
+                          </p>
                    </div>
 
                    <p className='text-sm'>Course by <span className='text-blue-600 underline'>Hamro-Learning</span></p>
