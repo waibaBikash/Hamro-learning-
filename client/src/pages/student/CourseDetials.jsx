@@ -80,7 +80,10 @@ const CourseDetials = () => {
                           </p>
                    </div>
 
-                   <p className='text-sm'>Course by <span className='text-blue-600 underline'>Hamro-Learning</span></p>
+                   <p 
+                   className='text-sm'>Course by <span className='text-blue-600 underline'>
+                    Hamro-Learning</span>
+                   </p>
                     <div className='pt-8 text-gray-800'>
                       <h2 className='text-xl font-semibold'>Course Sturcture</h2>
                         <div className='pt-5'>
@@ -143,7 +146,9 @@ const CourseDetials = () => {
                <p className='text-red-500'> <span className='font-medium'>5 days</span> left at this price!</p>
              </div>
               <div className='flex gap-3 items-center pt-2'>
-                <p className='text-gray-800 md:text-4xl text-2xl font-semibold'>{currency}{(courseData.coursePrice - courseData.discount * courseData.coursePrice / 100).toFixed(2) }</p>
+                <p className='text-gray-800 md:text-4xl text-2xl font-semibold'>
+                {currency}{(courseData.coursePrice - courseData.discount * courseData.coursePrice / 100).toFixed(2) }
+                </p>
                 <p className='md:text-lg text-gray-500 line-through'>{currency}{courseData.coursePrice}</p>
                 <p className='md:text-lg text-gray-500'>{courseData.discount}% off</p>
               </div>
@@ -163,7 +168,10 @@ const CourseDetials = () => {
                          <p>{claculateNoOfLectures(courseData)} lessions</p>
                        </div>
                </div>
-                <button className='md:mt-6 w-full py-3 rounded bg-blue-600 text-white font-medium'>{isAlreadyEnrolled ? 'Already Enrolled' : 'Enroll Now'}</button>
+                <button
+                 className='md:mt-6 w-full py-3 rounded bg-blue-600 text-white font-medium'>
+                  {isAlreadyEnrolled ? 'Already Enrolled' : 'Enroll Now'}
+                  </button>
 
                 <div className='pt-6'>
                    <p className='md:text-xl text-lg font-medium text-gray-800'>What's in the course?</p>
