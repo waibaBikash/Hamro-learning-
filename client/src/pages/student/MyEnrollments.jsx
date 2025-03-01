@@ -1,8 +1,25 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { AppContext } from '../../context/AppContext'
 
 const MyEnrollments = () => {
   const {enrolledCourses, calculateCourseDuration} = useContext(AppContext)
+
+  const [progressArray, setProgressArray] = useState([
+    {lectureCompleted: 2, totalLectures: 4},
+    {lectureCompleted: 1, totalLectures: 5},
+    {lectureCompleted: 3, totalLectures: 6},
+    {lectureCompleted: 0, totalLectures: 4},
+    {lectureCompleted: 3, totalLectures: 3},
+    {lectureCompleted: 6, totalLectures: 7},
+    {lectureCompleted: 2, totalLectures: 8},
+    {lectureCompleted: 4, totalLectures: 6},
+    {lectureCompleted: 3, totalLectures: 10},
+    {lectureCompleted: 7, totalLectures: 5},
+    {lectureCompleted: 2, totalLectures: 7},
+    {lectureCompleted: 1, totalLectures: 4},
+    {lectureCompleted: 0, totalLectures: 2},
+    {lectureCompleted: 5, totalLectures: 5},
+  ])
   return (
     <>
     <div className='md:px-36 px-8 pt-10'>
@@ -29,10 +46,14 @@ const MyEnrollments = () => {
                      {calculateCourseDuration(course)}
                    </td>
                    <td className='px-4 py-3 max-sm:hidden'>
-                    4 / 10 <span>Lectures</span>
+                    {progressArray[index] && `${progressArray[index].lectureCompleted} / ${progressArray[index].totalLectures} `} <span>Lectures</span>
                    </td>
                    <td className='px-4 py-3 max-sm:hidden'>
-                     <button className='px-3 sm:px-5 py-1.5 sm:py-2 bg-blue-600 max-sm:text-xs text-white'>On Going</button>
+                     <button className='px-3 sm:px-5 py-1.5 sm:py-2 bg-blue-600 max-sm:text-xs text-white'>
+                      {progressArray[index] && progressArray[index].lectureCompleted / progressArray[index].totalLectures === 1
+                      ? 'Completed'
+                    : 'On Going' }
+                     </button>
                    </td>
                </tr>
              ))}
