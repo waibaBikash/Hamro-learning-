@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { AppContext } from '../../context/AppContext'
-import { useParams } from 'react-router-dom'
-import { assets } from '../../assets/assets'
-import humanizeDuration from 'humanize-duration'
-import YouTube from 'react-youtube'
-import Footer from '../../components/student/Footer'
+import React, { useContext, useEffect, useState } from 'react';
+import { AppContext } from '../../context/AppContext';
+import { useParams } from 'react-router-dom';
+import { assets } from '../../assets/assets';
+import humanizeDuration from 'humanize-duration';
+import YouTube from 'react-youtube';
+import Footer from '../../components/student/Footer';
 
 const Player = () => {
 
@@ -38,7 +38,10 @@ const Player = () => {
     <div className='p-4 sm:p-10 flex flex-col-reverse md:grid md:grid-cols-2 gap-10 md:px-36'>
       {/* Left Column */}
       <div className='text-gray-800'>
-         <h2 className='text-xl font-semibold'>Course Structure</h2>
+         <h2 
+          className='text-xl font-semibold'>
+            Course Structure
+            </h2>
            <div className='pt-5'>
                 {courseData && courseData.courseContent.map((chapter, index)=> (
                              <div key={index} className='border border-gray-300 bg-white mb-2 rounded'>
