@@ -129,7 +129,8 @@ const CourseDetials = () => {
       </div>
 
       {/* Right Column */}
-      <div className='max-w-course-card z-10 shadow-custom-card rounded-t md:rounded-none overflow-hidden bg-white min-w-[300px] sm:min-w-[420px]'>
+      <div 
+       className='max-w-course-card z-10 shadow-custom-card rounded-t md:rounded-none overflow-hidden bg-white min-w-[300px] sm:min-w-[420px]'>
 
         {
            playerData ? 
