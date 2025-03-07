@@ -28,7 +28,7 @@ const Dashboard = () => {
                  <p className='text-2xl font-medium text-gray-600'>
                   {dashboardData.enrolledStudentsData.length}
                  </p>
-                 <p className='text-base text-gray-500'>Total Enrollements</p>
+                 <p className='text-base text-gray-500'> Total Enrolments</p>
                  </div>
 
               </div>
