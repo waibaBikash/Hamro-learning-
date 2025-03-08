@@ -33,7 +33,7 @@ const AddCourse = () => {
   }
  },[])
   return (
-    <div className='h-screen overflow-scroll flex flex-col text-start justify-between md:p-8 md:pb-0 p-4 pt-8 pb-0'>
+    <div className='h-screen overflow-scroll flex flex-col items-start justify-between md:p-8 md:pb-0 p-4 pt-8 pb-0'>
        <form>
          <div className="flex flex-col gap-1">
             <input onChange={e => setCourseTitle(e.target.value)} value={courseTitle} type="text" placeholder='Type here' className='outline-none md:py-2.5 py-2 px-3 rounded border border-gray-500' required />
