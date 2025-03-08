@@ -64,6 +64,31 @@ const AddCourse = () => {
                 <p>Discount %</p>
                 <input onChange={e => setDiscount(e.target.value)} value={discount} type="number" placeholder='0' min={0} max={100} className='outline-none md:py-2.5 py-2 w-28 px-3 rounded border border-gray-500' />
              </div>
+             {/* // Adding  Chapters & Lectures */}
+              <div>
+                {chapters.map((chapter, chapterIndex) => (
+                   <div key={chapterIndex} className='bg-white border rounded-lg mb-4'>
+                     <div className='flex justify-between items-center p-4 border-b'>
+                        <div className='flex items-center'>
+                          <img className={`mr-2 cursor-pointer transition-all ${chapter.collapsed && '-rotate-90'}`} src={assets.dropdown_icon} width={14} alt="" />
+                          <span className='font-semibold'>{chapterIndex + 1} {chapter.chapterTitle}</span>
+                        </div>
+                         <span className='text-gray-500'>{chapter.chapterContent.length} Lectures</span>
+                         <img src={assets.cross_icon} alt="" className='cursor-pointer' />
+                     </div>
+                     {!chapter.collapsed && (
+                      <div className='p-4'>
+                         {chapter.chapterContent.map((lecture, lectureIndex)=>(
+                          <div key={chapterIndex} className='flex justify-between items-center mb-2'>
+                              <span>{lectureIndex + 1} {lecture.lectureTitle} - {lecture.lectureDuration} mins - <a href={lecture.lectureUrl} target='_blank' className='text-blue-500'>Link</a> - {lecture.isPreviewFree ? 'Free Preview' : 'Paid'}</span>
+                              <img src={assets.cross_icon} alt="" className='cursor-pointer' />
+                          </div>
+                         ))}
+                      </div>
+                     )}
+                   </div>
+                ))}
+              </div>
        </form>
      </div>
   )
