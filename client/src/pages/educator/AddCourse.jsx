@@ -113,7 +113,10 @@ const AddCourse = () => {
                      )}
                    </div>
                 ))}
-                <div className='flex justify-center items-center bg-blue-100 p-2 rounded-lg cursor-pointer'>+ Add Chapter</div>
+                <div 
+                 className='flex justify-center items-center bg-blue-100 p-2 rounded-lg cursor-pointer'>
+                  + Add Chapter
+                  </div>
                 {
                   showPopup && (
                     <div className='fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50'>
@@ -153,4 +156,4 @@ const AddCourse = () => {
   )
 }
 
-export default AddCourse
+export default AddCourse;
