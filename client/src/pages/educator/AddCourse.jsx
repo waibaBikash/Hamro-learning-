@@ -87,7 +87,9 @@ const AddCourse = () => {
                    <div key={chapterIndex} className='bg-white border rounded-lg mb-4'>
                      <div className='flex justify-between items-center p-4 border-b'>
                         <div className='flex items-center'>
-                          <img className={`mr-2 cursor-pointer transition-all ${chapter.collapsed && '-rotate-90'}`} src={assets.dropdown_icon} width={14} alt="" />
+                          <img className={`mr-2 cursor-pointer transition-all ${chapter.collapsed && '-rotate-90'}`} 
+                          src={assets.dropdown_icon}
+                           width={14} alt="" />
                           <span className='font-semibold'>{chapterIndex + 1} {chapter.chapterTitle}</span>
                         </div>
                          <span className='text-gray-500'>{chapter.chapterContent.length} Lectures</span>
@@ -97,7 +99,10 @@ const AddCourse = () => {
                       <div className='p-4'>
                          {chapter.chapterContent.map((lecture, lectureIndex)=>(
                           <div key={chapterIndex} className='flex justify-between items-center mb-2'>
-                              <span>{lectureIndex + 1} {lecture.lectureTitle} - {lecture.lectureDuration} mins - <a href={lecture.lectureUrl} target='_blank' className='text-blue-500'>Link</a> - {lecture.isPreviewFree ? 'Free Preview' : 'Paid'}</span>
+                              <span>{lectureIndex + 1} {lecture.lectureTitle} - {lecture.lectureDuration} mins - <a href={lecture.lectureUrl}
+                               target='_blank' 
+                               className='text-blue-500'>Link</a> - {lecture.isPreviewFree ? 'Free Preview' : 'Paid'}
+                               </span>
                               <img src={assets.cross_icon} alt="" className='cursor-pointer' />
                           </div>
                          ))}
