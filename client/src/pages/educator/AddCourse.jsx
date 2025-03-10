@@ -34,10 +34,17 @@ const AddCourse = () => {
   }
  },[])
   return (
-    <div className='h-screen overflow-scroll flex flex-col items-start justify-between md:p-8 md:pb-0 p-4 pt-8 pb-0'>
+    <div 
+      className='h-screen overflow-scroll flex flex-col items-start justify-between md:p-8 md:pb-0 p-4 pt-8 pb-0'>
        <form className='flex flex-col gap-4 max-w-md w-full text-gray-500'>
          <div className="flex flex-col gap-1">
-            <input onChange={e => setCourseTitle(e.target.value)} value={courseTitle} type="text" placeholder='Type here' className='outline-none md:py-2.5 py-2 px-3 rounded border border-gray-500' required />
+            <input 
+            onChange={e => setCourseTitle(e.target.value)} value={courseTitle}
+             type="text" 
+             placeholder='Type here' 
+             className='outline-none md:py-2.5 py-2 px-3 rounded border border-gray-500' 
+             required 
+             />
          </div>
           <div className='flex flex-col gap-1'>
             <p>Course Description</p>
@@ -84,10 +91,47 @@ const AddCourse = () => {
                               <img src={assets.cross_icon} alt="" className='cursor-pointer' />
                           </div>
                          ))}
+                          <div className='inline-flex bg-gray-100 p-2 rounded cursor-pointer mt-2'>
+                            + Add Lecture
+                          </div>
                       </div>
                      )}
                    </div>
                 ))}
+                <div className='flex justify-center items-center bg-blue-100 p-2 rounded-lg cursor-pointer'>+ Add Chapter</div>
+                {
+                  showPopup && (
+                    <div className='fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50'>
+                       <div className='bg-white text-gray-700 p-4 rounded relative w-full max-w-80'>
+                        <h2 className='text-lg font-semibold mb-4'>Add Lecture</h2>
+                         <div className='mb-2'>
+                           <p>Lecture Title</p>
+                           <input type="text" 
+                           className='mt-1 block w-full border rounded py-1 px-2' 
+                           value={lectureDetails.lectureTitle}
+                           onChange={(e) =>  setLectureDetails({...lectureDetails, lectureTitle: e.target.value})}
+                            />
+                         </div>
+                         <div className='mb-2'>
+                           <p>Duration (minutes)</p>
+                           <input type="number" 
+                           className='mt-1 block w-full border rounded py-1 px-2' 
+                           value={lectureDetails.lectureDuration}
+                           onChange={(e) =>  setLectureDetails({...lectureDetails, lectureDuration: e.target.value})}
+                            />
+                         </div>
+                         <div className='mb-2'>
+                           <p>Lecture URL</p>
+                           <input type="number" 
+                           className='mt-1 block w-full border rounded py-1 px-2' 
+                           value={lectureDetails.lectureDuration}
+                           onChange={(e) =>  setLectureDetails({...lectureDetails, lectureDuration: e.target.value})}
+                            />
+                         </div>
+                       </div>
+                    </div>
+                  )
+                }
               </div>
        </form>
      </div>
