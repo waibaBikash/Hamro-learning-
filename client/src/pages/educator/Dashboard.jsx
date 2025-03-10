@@ -89,4 +89,4 @@ const Dashboard = () => {
   ) : <Loading/>
 }
 
-export default Dashboard
+export default Dashboard;
