@@ -55,7 +55,11 @@ const AddCourse = () => {
               <div>
                  <p>Course Price</p>
                  <input onChange={e => setCoursePrice(e.target.value)}
-                 value={coursePrice} type="number" placeholder='0' className='outline-none md:py-2.5 py-2 w-28 px-3 rounded border border-gray-500' />
+                 value={coursePrice}
+                  type="number" 
+                  placeholder='0' 
+                  className='outline-none md:py-2.5 py-2 w-28 px-3 rounded border border-gray-500'
+                   />
               </div>
                
                 <div className='flex md:flex-row flex-col items-center gap-3'>
