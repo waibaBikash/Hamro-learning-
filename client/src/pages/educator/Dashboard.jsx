@@ -7,7 +7,8 @@ const Dashboard = () => {
 
   const { currency } = useContext(AppContext)
 
-  const [dashboardData, setDashboardData] = useState(null)
+  const [dashboardData,
+     setDashboardData] = useState(null)
 
    const fetchDashboardData = async () => {
     setDashboardData(dummyDashboardData)
