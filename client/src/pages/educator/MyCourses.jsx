@@ -4,9 +4,11 @@ import Loading from '../../components/student/Loading'
 
 const MyCourses = () => {
 
-  const {currency, allCourses} = useContext(AppContext)
+  const {currency, 
+    allCourses} = useContext(AppContext)
 
-  const [courses, setCourses] = useState(null)
+  const [courses,
+     setCourses] = useState(null)
 
   const fetchEducatorCourses = async () => {
     setCourses(allCourses)
