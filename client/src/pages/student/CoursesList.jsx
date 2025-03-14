@@ -8,9 +8,11 @@ import Footer from '../../components/student/Footer';
 
 const CoursesList = () => {
 
-  const {navigate, allCourses} = useContext(AppContext)
+  const {navigate,
+     allCourses} = useContext(AppContext)
   const {input} = useParams()
-  const [filteredCourse, setFilteredCourse] = useState([])
+  const [filteredCourse, 
+    setFilteredCourse] = useState([])
 
   useEffect(()=>{
    if(allCourses && allCourses.length > 0){
