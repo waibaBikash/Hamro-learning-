@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { dummyStudentEnrolled } from '../../assets/assets'
-import Loading from '../../components/student/Loading'
+import React, { useEffect, useState } from 'react';
+import { dummyStudentEnrolled } from '../../assets/assets';
+import Loading from '../../components/student/Loading';
 
 const StudentsEnrolled = () => {
 
@@ -47,4 +47,4 @@ const StudentsEnrolled = () => {
   ) : <Loading/>
 }
 
-export default StudentsEnrolled
+export default StudentsEnrolled;
