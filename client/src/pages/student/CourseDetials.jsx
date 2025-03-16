@@ -95,7 +95,10 @@ const CourseDetials = () => {
                                          src={assets.down_arrow_icon} alt="arrow icon" />
                                         <p className='font-medium md:text-base text-sm'>{chapter.chapterTitle}</p>
                                       </div>
-                                       <p className='text-sm md:text-default'>{chapter.chapterContent.length}lectures - {calculateChapterTime(chapter)}</p>
+                                       <p 
+                                        className='text-sm md:text-default'>
+                                          {chapter.chapterContent.length}lectures - {calculateChapterTime(chapter)}
+                                        </p>
                                   </div>
                                    <div className={`overflow-hidden transition-all duration-300 ${openSections[index] ? 'max-h-96' : 'max-h-0'}`}>
                                      <ul className='list-disc md:pl-10 pl-4 pr-4 py-2 text-gray-600 border-t border-gray-300'>
