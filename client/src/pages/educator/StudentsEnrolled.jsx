@@ -4,7 +4,8 @@ import Loading from '../../components/student/Loading';
 
 const StudentsEnrolled = () => {
 
-  const [enrolledStudents, setEnrolledStudents] = useState(null)
+  const [enrolledStudents,
+     setEnrolledStudents] = useState(null)
 
   const fetchEnrolledstudents = async () => {
      setEnrolledStudents(dummyStudentEnrolled)
