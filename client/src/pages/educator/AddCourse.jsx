@@ -142,17 +142,30 @@ const AddCourse = () => {
                          </div>
                          <div className='mb-2'>
                            <p>Lecture URL</p>
-                           <input type="number" 
+                           <input type="text" 
                            className='mt-1 block w-full border rounded py-1 px-2' 
-                           value={lectureDetails.lectureDuration}
-                           onChange={(e) =>  setLectureDetails({...lectureDetails, lectureDuration: e.target.value})}
+                           value={lectureDetails.lectureUrl}
+                           onChange={(e) =>  setLectureDetails({...lectureDetails, lectureUrl: e.target.value})}
                             />
                          </div>
+
+                         <div className='flex gap-2 my-4'>
+                           <p>Is Preview Free?</p>
+                           <input type="checkbox" 
+                           className='mt-1 scale-125' 
+                           checked={lectureDetails.isPreviewFree}
+                           onChange={(e) =>  setLectureDetails({...lectureDetails, isPreviewFree: e.target.value})}
+                            />
+                         </div>
+                           <button type='button' className='w-full bg-blue-400 text-white px-4 py-2 rounded'>Add</button>
+
+                           <img onClick={()=> setShowPopup(false)} src={assets.cross_icon} className='absolute top-4 right-4 w-4 cursor-pointer' alt="" />
                        </div>
                     </div>
                   )
                 }
               </div>
+               <button type='submit' className='bg-black text-white w-max py-2.5 px-8 rounded my-4'>ADD</button>
        </form>
      </div>
   )
