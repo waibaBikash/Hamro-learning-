@@ -83,7 +83,7 @@ const AddCourse = () => {
                   className='outline-none md:py-2.5 py-2 w-28 px-3 rounded border border-gray-500'
                    />
              </div>
-             {/* // Adding  Chapters & Lectures */}
+             {/* Adding  Chapters & Lectures */}
               <div>
                 {chapters.map((chapter, chapterIndex) => (
                    <div key={chapterIndex} className='bg-white border rounded-lg mb-4'>
