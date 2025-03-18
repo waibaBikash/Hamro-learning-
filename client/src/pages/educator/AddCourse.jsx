@@ -27,6 +27,29 @@ const AddCourse = () => {
     isPreviewFree: false,
   }
 )
+  const handleChapter = (action, chaperId) => {
+    if(action === 'add'){
+      const title = prompt('Enter Chapter Name:');
+      if(title){
+        const newChapter = {
+          chaperId: uniqid(),
+          chapterTitle: title,
+          chapterContent: [],
+          collapsed: false,
+          chapterOrder: chapters.length > 0 ? chapters.slice(-1)[0].chapterOrder + 1 : 1,
+        };
+        setChapters([...chapters, newChapter]);
+      }
+    }else if(action === 'remove'){
+      setChapters(chapters.filter((chapter)=> chapter.chapterId !== chaperId));
+    }else if(action === 'toggle'){
+      setChapters(
+        chapters.map((chapter) =>
+        chapter.chaperId === chaperId ? {...chapter, collapsed: !chapter.collapsed} : chapter
+       )
+      );
+    }
+  };
 
  useEffect(()=>{
   // Initiate Quill only once
@@ -116,7 +139,7 @@ const AddCourse = () => {
                      )}
                    </div>
                 ))}
-                <div  onClick={()=> }
+                <div  onClick={()=> handleChapter('add')}
                  className='flex justify-center items-center bg-blue-100 p-2 rounded-lg cursor-pointer'>
                   + Add Chapter
                   </div>
@@ -155,7 +178,7 @@ const AddCourse = () => {
                            <input type="checkbox" 
                            className='mt-1 scale-125' 
                            checked={lectureDetails.isPreviewFree}
-                           onChange={(e) =>  setLectureDetails({...lectureDetails, isPreviewFree: e.target.value})}
+                           onChange={(e) =>  setLectureDetails({...lectureDetails, isPreviewFree: e.target.checked})}
                             />
                          </div>
                            <button type='button' className='w-full bg-blue-400 text-white px-4 py-2 rounded'>Add</button>
