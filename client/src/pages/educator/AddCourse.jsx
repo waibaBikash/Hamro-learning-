@@ -19,7 +19,8 @@ const AddCourse = () => {
   const [showPopup, setShowPopup] = useState(false)
   const [currentChapterId, setCurrentChapterId] = useState(null);
 
-  const [lectureDetails, setLectureDetails] = useState({
+  const [lectureDetails, setLectureDetails] = useState(
+    {
     lectureTitle: '',
     lectureDuration: '',
     lectureUrl: '',
@@ -115,7 +116,7 @@ const AddCourse = () => {
                      )}
                    </div>
                 ))}
-                <div 
+                <div  onClick={()=> }
                  className='flex justify-center items-center bg-blue-100 p-2 rounded-lg cursor-pointer'>
                   + Add Chapter
                   </div>
