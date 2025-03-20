@@ -51,6 +51,22 @@ const AddCourse = () => {
     }
   };
 
+  const handleLecture = (action, chapterId, lectureIndex) => {
+    if(action === 'add'){
+      setCurrentChapterId(chapterId);
+      setShowPopup(true);
+    }else if (action === 'remove'){
+      setChapters(
+        chapters.map((chapter) => {
+          if(chapter.chaperId === chapterId){
+             chapter.chapterContent.splice(lectureIndex, 1);
+          }
+           return chapter;
+        })
+      );
+    }
+  };
+
  useEffect(()=>{
   // Initiate Quill only once
   if(!quillRef.current && editorRef.current){
@@ -133,10 +149,12 @@ const AddCourse = () => {
                                target='_blank' 
                                className='text-blue-500'>Link</a> - {lecture.isPreviewFree ? 'Free Preview' : 'Paid'}
                                </span>
-                              <img src={assets.cross_icon} alt="" className='cursor-pointer' />
+                              <img onClick={()=> handleLecture('remove', chapter.chaperId, lectureIndex )}
+                               src={assets.cross_icon} alt="" className='cursor-pointer' />
                           </div>
                          ))}
-                          <div className='inline-flex bg-gray-100 p-2 rounded cursor-pointer mt-2'>
+                          <div onClick={()=> handleLecture('add', chapter.chaperId)}
+                           className='inline-flex bg-gray-100 p-2 rounded cursor-pointer mt-2'>
                             + Add Lecture
                           </div>
                       </div>
