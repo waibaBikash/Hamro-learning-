@@ -27,7 +27,7 @@ const AddCourse = () => {
     isPreviewFree: false,
   }
 )
-  const handleChapter = (action, chaperId) => {
+  const handleChapter = (action, chapterId) => {
     if(action === 'add'){
       const title = prompt('Enter Chapter Name:');
       if(title){
@@ -41,11 +41,11 @@ const AddCourse = () => {
         setChapters([...chapters, newChapter]);
       }
     }else if(action === 'remove'){
-      setChapters(chapters.filter((chapter)=> chapter.chapterId !== chaperId));
+      setChapters(chapters.filter((chapter)=> chapter.chapterId !== chapterId));
     }else if(action === 'toggle'){
       setChapters(
         chapters.map((chapter) =>
-        chapter.chaperId === chaperId ? {...chapter, collapsed: !chapter.collapsed} : chapter
+        chapter.chapterId === chapterId ? {...chapter, collapsed: !chapter.collapsed} : chapter
        )
       );
     }
@@ -131,7 +131,8 @@ const AddCourse = () => {
                    <div key={chapterIndex} className='bg-white border rounded-lg mb-4'>
                      <div className='flex justify-between items-center p-4 border-b'>
                         <div className='flex items-center'>
-                          <img className={`mr-2 cursor-pointer transition-all ${chapter.collapsed && '-rotate-90'}`} 
+                          <img onClick={()=> handleChapter('toggle', chapter.chaperId)}
+                           className={`mr-2 cursor-pointer transition-all ${chapter.collapsed && '-rotate-90'}`} 
                           src={assets.dropdown_icon}
                            width={14} alt="" />
                           <span 
@@ -139,7 +140,8 @@ const AddCourse = () => {
                             {chapterIndex + 1} {chapter.chapterTitle}</span>
                         </div>
                          <span className='text-gray-500'>{chapter.chapterContent.length} Lectures</span>
-                         <img src={assets.cross_icon} alt="" className='cursor-pointer' />
+                         <img onClick={()=> handleChapter('remove', chapter.chapterId)}
+                         src={assets.cross_icon} alt="" className='cursor-pointer' />
                      </div>
                      {!chapter.collapsed && (
                       <div className='p-4'>
