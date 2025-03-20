@@ -118,7 +118,9 @@ const AddCourse = () => {
                           <img className={`mr-2 cursor-pointer transition-all ${chapter.collapsed && '-rotate-90'}`} 
                           src={assets.dropdown_icon}
                            width={14} alt="" />
-                          <span className='font-semibold'>{chapterIndex + 1} {chapter.chapterTitle}</span>
+                          <span 
+                          className='font-semibold'>
+                            {chapterIndex + 1} {chapter.chapterTitle}</span>
                         </div>
                          <span className='text-gray-500'>{chapter.chapterContent.length} Lectures</span>
                          <img src={assets.cross_icon} alt="" className='cursor-pointer' />
