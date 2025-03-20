@@ -234,15 +234,26 @@ const AddCourse = () => {
                             />
                          </div>
                            <button onClick={addLecture}
-                            type='button' className='w-full bg-blue-400 text-white px-4 py-2 rounded'>Add</button>
+                            type='button' 
+                            className='w-full bg-blue-400 text-white px-4 py-2 rounded'>A
+                            dd
+                            </button>
 
-                           <img onClick={()=> setShowPopup(false)} src={assets.cross_icon} className='absolute top-4 right-4 w-4 cursor-pointer' alt="" />
+                           <img
+                            onClick={()=> setShowPopup(false)} 
+                            src={assets.cross_icon} 
+                            className='absolute top-4 right-4 w-4 cursor-pointer' 
+                            alt="" />
                        </div>
                     </div>
                   )
                 }
               </div>
-               <button type='submit' className='bg-black text-white w-max py-2.5 px-8 rounded my-4'>ADD</button>
+               <button 
+               type='submit' 
+               className='bg-black text-white w-max py-2.5 px-8 rounded my-4'>
+                ADD
+                </button>
        </form>
      </div>
   )
