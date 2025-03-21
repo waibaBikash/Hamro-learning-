@@ -175,7 +175,8 @@ const AddCourse = () => {
                       <div className='p-4'>
                          {chapter.chapterContent.map((lecture, lectureIndex)=>(
                           <div key={chapterIndex} className='flex justify-between items-center mb-2'>
-                              <span>{lectureIndex + 1} {lecture.lectureTitle} - {lecture.lectureDuration} mins - <a href={lecture.lectureUrl}
+                              <span>{lectureIndex + 1} {lecture.lectureTitle} - {lecture.lectureDuration}
+                               mins - <a href={lecture.lectureUrl}
                                target='_blank' 
                                className='text-blue-500'>Link</a> - {lecture.isPreviewFree ? 'Free Preview' : 'Paid'}
                                </span>
