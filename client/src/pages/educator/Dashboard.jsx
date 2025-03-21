@@ -58,8 +58,12 @@ const Dashboard = () => {
           </div>
 
             <div>
-              <h2 className='pb-4 text-lg font-medium'>Latest Enrolments</h2>
-               <div className='flex flex-col items-center max-w-4xl w-full overflow-hidden rounded-md bg-white border border-gray-500/20'>
+              <h2 
+               className='pb-4 text-lg font-medium'>
+                Latest Enrolments
+                </h2>
+               <div
+                 className='flex flex-col items-center max-w-4xl w-full overflow-hidden rounded-md bg-white border border-gray-500/20'>
                    <table className='table-fixed md:table-auto w-full overflow-hidden'>
                       <thead className='text-gray-900 border-b bg-orange-500/20 text-sm text-left'>
                           <tr>
@@ -79,7 +83,9 @@ const Dashboard = () => {
                                 <img src={item.student.imageUrl} alt="Profile" className='w-9 h-9 rounded-full' />
                                 <span>{item.student.name}</span>
                                </td>
-                               <td className='px-4 py-3 truncate'>{item.courseTitle}</td>
+                               <td 
+                               className='px-4 py-3 truncate'>{item.courseTitle}
+                               </td>
                              </tr>
                           ))}
                        </tbody>
