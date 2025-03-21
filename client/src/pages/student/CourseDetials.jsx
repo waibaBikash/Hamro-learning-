@@ -41,7 +41,8 @@ const CourseDetials = () => {
   };
   return courseData ? (
     <>
-    <div className='flex md:flex-row flex-col-reverse gap-10 relative items-start justify-between md:px-36 px-8 md:pt-30 pt-20 text-left'>
+    <div 
+     className='flex md:flex-row flex-col-reverse gap-10 relative items-start justify-between md:px-36 px-8 md:pt-30 pt-20 text-left'>
       
       <div className='absolute top-0 left-0 w-full h-section-height -z-1 bg-gradient-to-b from-cyan-100/70 '></div>
 
@@ -94,7 +95,9 @@ const CourseDetials = () => {
                                       <div className='flex items-center gap-2'>
                                         <img className={`transform transition-transform ${openSections[index] ? 'rotate-180' :''}`}
                                          src={assets.down_arrow_icon} alt="arrow icon" />
-                                        <p className='font-medium md:text-base text-sm'>{chapter.chapterTitle}</p>
+                                        <p className='font-medium md:text-base text-sm'>
+                                          {chapter.chapterTitle}
+                                          </p>
                                       </div>
                                        <p 
                                         className='text-sm md:text-default'>
@@ -114,7 +117,9 @@ const CourseDetials = () => {
                                                     videoId: lecture.lectureUrl.split('/').pop()
                                                    })}
                                                    className='text-blue-500 cursor-pointer'>Preview</p>}
-                                                   <p>{humanizeDuration(lecture.lectureDuration * 60 * 1000, {units: ["h", "m"]})}</p>
+                                                   <p>
+                                                    {humanizeDuration(lecture.lectureDuration * 60 * 1000, {units: ["h", "m"]})}
+                                                    </p>
                                                 </div>
                                             </div>
                                         </li>
