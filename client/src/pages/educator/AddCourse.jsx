@@ -20,7 +20,8 @@ const AddCourse = () => {
   const [showPopup, setShowPopup] = useState(false)
   const [currentChapterId, setCurrentChapterId] = useState(null);
 
-  const [lectureDetails, setLectureDetails] = useState(
+  const [lectureDetails,
+     setLectureDetails] = useState(
     {
     lectureTitle: '',
     lectureDuration: '',
