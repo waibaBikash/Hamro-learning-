@@ -51,8 +51,9 @@ const CoursesList = () => {
           <p>{input}</p>
           <img 
            onClick={()=> navigate('/course-list')} 
-           className='cursor-pointer' src={assets.cross_icon}
-            alt=""
+           className='cursor-pointer'
+            src={assets.cross_icon}
+            alt="cross icon"
              />
          </div>
 
