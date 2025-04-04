@@ -30,7 +30,10 @@ const Dashboard = () => {
                  <p className='text-2xl font-medium text-gray-600'>
                   {dashboardData.enrolledStudentsData.length}
                  </p>
-                 <p className='text-base text-gray-500'> Total Enrolments</p>
+                 <p 
+                 className='text-base text-gray-500'>
+                   Total Enrolments
+                   </p>
                  </div>
 
               </div>
@@ -41,7 +44,10 @@ const Dashboard = () => {
                  <p className='text-2xl font-medium text-gray-600'>
                   {dashboardData.totalCourses}
                  </p>
-                 <p className='text-base text-gray-500'>Total Courses</p>
+                 <p 
+                  className='text-base text-gray-500'>
+                    Total Courses
+                    </p>
                </div>
 
               </div>
