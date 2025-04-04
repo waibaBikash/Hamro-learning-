@@ -102,7 +102,9 @@ const Player = () => {
             </div>
           )
           :
-          <img src={courseData ? courseData.courseThumbnail : ''} alt="" />
+          <img 
+          src={courseData ? courseData.courseThumbnail : ''} 
+          alt="" />
         }
          
       </div>
