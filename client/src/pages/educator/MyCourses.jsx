@@ -20,7 +20,9 @@ const MyCourses = () => {
   return  courses ? (
     <div className='h-screen flex flex-col items-start justify-between md:p-8 md:pb-0 p-4 pt-8 pb-0'>
        <div className='w-full'>
-          <h2 className="pb-4 text-lg font-medium">My Courses</h2>
+          <h2 className="pb-4 text-lg font-medium">
+            My Courses
+            </h2>
            <div className='flex flex-col items-center max-w-4xl w-full overflow-hidden rounded-md bg-white border border-gray-500/20'>
               <table className='md:table-auto table-fixed w-full overflow-hidden'>
                 <thead className='text-gray-900 border-b border-gray-500/20 text-sm text-left'>
