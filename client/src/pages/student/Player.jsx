@@ -106,7 +106,6 @@ const Player = () => {
           src={courseData ? courseData.courseThumbnail : ''} 
           alt="" />
         }
-         
       </div>
     </div>
     <Footer/>
